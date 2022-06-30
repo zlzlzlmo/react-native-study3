@@ -5,27 +5,20 @@ import CategoryGridTile from "../components/CategoryGridTile";
 
 const CategoriesScreen = () => {
   return (
-    <View style={styles.categoryContainer}>
-      <FlatList
-        data={CATEGORIES}
-        keyExtractor={(item) => item.id}
-        renderItem={(renderItem) => (
-          <CategoryGridTile
-            title={renderItem.item.title}
-            color={renderItem.item.color}
-          />
-        )}
-      />
-    </View>
+    <FlatList
+      data={CATEGORIES}
+      keyExtractor={(item) => item.id}
+      renderItem={(renderItem) => (
+        <CategoryGridTile
+          title={renderItem.item.title}
+          color={renderItem.item.color}
+        />
+      )}
+      numColumns={2}
+    />
   );
 };
 
 export default CategoriesScreen;
 
-const styles = StyleSheet.create({
-  categoryContainer: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-});
+const styles = StyleSheet.create({});
