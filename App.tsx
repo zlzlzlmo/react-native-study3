@@ -7,7 +7,14 @@ import MealsOverViewScreen from "./src/screens/MealsOverViewScreen";
 
 // * NavigationContainer 으로 screen 컴포넌트를 모두 감싸준다.
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  MealsCategories: undefined;
+  MealsOverview: {
+    categoryId: string;
+  };
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (

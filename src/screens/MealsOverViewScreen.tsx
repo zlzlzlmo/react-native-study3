@@ -1,10 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { NavigationStackProp } from "react-navigation-stack";
+import { RootStackParamList } from "../../App";
 
-const MealsOverViewScreen = () => {
+type Props = NavigationStackProp<RootStackParamList, "MealsOverview">;
+
+const MealsOverViewScreen = ({ route }: Props) => {
+  const catId = route.params.categoryId;
   return (
     <View style={styles.container}>
-      <Text>MealsOverViewScreen</Text>
+      <Text>MealsOverViewScreen - {catId}</Text>
     </View>
   );
 };

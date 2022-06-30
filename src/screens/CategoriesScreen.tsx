@@ -3,16 +3,15 @@ import React from "react";
 import { CATEGORIES } from "../data/dummy-data";
 import CategoryGridTile from "../components/CategoryGridTile";
 import { NavigationStackProp } from "react-navigation-stack";
+import { RootStackParamList } from "../../App";
 
-interface NavigationProps {
-  navigation: NavigationStackProp;
-}
-
-interface Props extends NavigationProps {}
+type Props = NavigationStackProp<RootStackParamList, "MealsCategories">;
 
 const CategoriesScreen = ({ navigation }: Props) => {
-  const pressHandler = () => {
-    navigation.navigate("MealsOverview");
+  const pressHandler = (categoryId: string) => {
+    navigation.navigate("MealsOverview", {
+      categoryId,
+    });
   };
 
   return (
@@ -23,7 +22,7 @@ const CategoriesScreen = ({ navigation }: Props) => {
         <CategoryGridTile
           title={renderItem.item.title}
           color={renderItem.item.color}
-          onPress={pressHandler}
+          onPress={pressHandler.bind(this, renderItem.item.id)}
         />
       )}
       numColumns={2}
