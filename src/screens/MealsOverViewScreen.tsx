@@ -1,8 +1,15 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  ListRenderItemInfo,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import React from "react";
 import { NavigationStackProp } from "react-navigation-stack";
 import { RootStackParamList } from "../../App";
 import { MEALS } from "../data/dummy-data";
+import Meal from "../models/meal";
 
 type Props = NavigationStackProp<RootStackParamList, "MealsOverview">;
 
@@ -13,12 +20,20 @@ const MealsOverViewScreen = ({ route }: Props) => {
     return mealItem.categoryIds.indexOf(catId) > -1;
   });
 
+  const renderMealItem = (item: Meal) => {
+    return (
+      <View>
+        <Text>{item.id}</Text>
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <FlatList
         data={displayedMeals}
         keyExtractor={(item) => item.id}
-        renderItem={(renderItem) => <Text>{renderItem.item.imageUrl}</Text>}
+        renderItem={(renderItem) => renderMealItem(renderItem.item)}
       />
     </View>
   );
