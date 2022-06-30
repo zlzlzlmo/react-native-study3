@@ -4,8 +4,9 @@ import React from "react";
 interface CategoryGridTileProps {
   title: string;
   color: string;
+  onPress: () => void;
 }
-const CategoryGridTile = ({ title, color }: CategoryGridTileProps) => {
+const CategoryGridTile = ({ title, color, onPress }: CategoryGridTileProps) => {
   return (
     <View style={styles.gridItem}>
       <Pressable
@@ -14,6 +15,7 @@ const CategoryGridTile = ({ title, color }: CategoryGridTileProps) => {
           styles.button,
           pressed && styles.buttonPressed,
         ]}
+        onPress={onPress}
       >
         <View style={[styles.innerContainer, { backgroundColor: color }]}>
           <Text style={styles.title}>{title}</Text>
