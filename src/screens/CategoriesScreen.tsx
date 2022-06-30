@@ -5,7 +5,7 @@ import CategoryGridTile from "../components/CategoryGridTile";
 
 const CategoriesScreen = () => {
   return (
-    <View>
+    <View style={styles.categoryContainer}>
       <FlatList
         data={CATEGORIES}
         keyExtractor={(item) => item.id}
@@ -22,4 +22,10 @@ const CategoriesScreen = () => {
 
 export default CategoriesScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  categoryContainer: {
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+});
