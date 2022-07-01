@@ -47,7 +47,11 @@ export default function App() {
           <Stack.Screen
             name="MealsOverview"
             component={MealsOverViewScreen}
-            options={{ title: "음식", headerBackTitle: "뒤로가기" }}
+            options={({ route, navigation }) => {
+              return {
+                title: route.params.categoryId,
+              };
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
