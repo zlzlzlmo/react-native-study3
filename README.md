@@ -36,5 +36,11 @@
 
 ## Stack Navigator vs Drawer Navigator
 
-- Stack Navigator은 헤더가 생기며 스크린 이동시 go back 기능과 스크린 네임이 header 타이틀로 생긴다 ( https://reactnavigation.org/docs/stack-navigator )
-- Drawer Navigator은 왼쪽에 Drawer 박스가 생기며 활성화 시키면 그곳에서 스크린 네임들을 클릭하여 그곳으로 스크린 이동을 한다. ( https://reactnavigation.org/docs/drawer-navigator )
+- Stack Navigator은 타이틀을 가진 헤더가 생기며 스크린 이동시 go back 기능과 스크린 네임이 header 타이틀이 변경된다. ( https://reactnavigation.org/docs/stack-navigator )
+- Drawer Navigator은 왼쪽에 햄버거 아이콘과 함께 Drawer 박스가 생기며 활성화 시키면 그곳에서 스크린 네임들을 클릭하여 그곳으로 스크린 이동을 한다. ( https://reactnavigation.org/docs/drawer-navigator )
+
+## 그외
+
+- Bottom Tabs Navigator, Material Top Tabs와 같은 Nivagator 와 같은 여러 navigation들이 존재한다
+- Bottom Tabs 는 아래에 탭이 존재하는 navigation
+- Material Top Tabs는 상단에 탭 형태로 되어있는 네비게이션
