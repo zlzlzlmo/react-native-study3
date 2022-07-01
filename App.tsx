@@ -4,6 +4,7 @@ import CategoriesScreen from "./src/screens/CategoriesScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import MealsOverViewScreen from "./src/screens/MealsOverViewScreen";
+import MealDetailScreen from "./src/screens/MealDetailScreen";
 
 // * NavigationContainer 으로 screen 컴포넌트를 모두 감싸준다.
 
@@ -11,6 +12,9 @@ export type RootStackParamList = {
   MealsCategories: undefined;
   MealsOverview: {
     categoryId: string;
+  };
+  MealDetail: {
+    title: string;
   };
 };
 
@@ -53,6 +57,7 @@ export default function App() {
               };
             }}
           />
+          <Stack.Screen name="MealDetail" component={MealDetailScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

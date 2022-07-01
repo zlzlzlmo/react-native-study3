@@ -28,6 +28,12 @@ const MealsOverViewScreen = ({ route, navigation }: Props) => {
     });
   }, [catId, navigation]);
 
+  const handleNaviationToDetail = (item: Meal) => () => {
+    navigation.navigate("MealDetail", {
+      ...item,
+    });
+  };
+
   const renderMealItem = (item: Meal) => {
     return (
       <MealItem
@@ -36,6 +42,7 @@ const MealsOverViewScreen = ({ route, navigation }: Props) => {
         duration={item.duration}
         complexity={item.complexity}
         affordability={item.affordability}
+        onPress={handleNaviationToDetail(item)}
       />
     );
   };
