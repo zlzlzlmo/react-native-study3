@@ -20,6 +20,7 @@ const CategoriesScreen = ({ navigation }: Props) => {
       keyExtractor={(item) => item.id}
       renderItem={(renderItem) => (
         <CategoryGridTile
+          testID="category-item"
           title={renderItem.item.title}
           color={renderItem.item.color}
           onPress={pressHandler.bind(this, renderItem.item.id)}

@@ -6,11 +6,16 @@ interface CategoryGridTileProps {
   title: string;
   color: string;
   onPress: () => void;
+  testID?: string;
 }
-const CategoryGridTile = ({ title, color, onPress }: CategoryGridTileProps) => {
-  const navigation = useNavigation();
+const CategoryGridTile = ({
+  title,
+  color,
+  onPress,
+  ...props
+}: CategoryGridTileProps) => {
   return (
-    <View style={styles.gridItem}>
+    <View style={styles.gridItem} {...props}>
       <Pressable
         android_ripple={{ color: "#ccc" }}
         style={({ pressed }) => [
