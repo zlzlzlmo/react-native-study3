@@ -10,6 +10,7 @@ import { NavigationStackProp } from "react-navigation-stack";
 import { RootStackParamList } from "../../App";
 import { MEALS } from "../data/dummy-data";
 import Meal from "../models/meal";
+import MealItem from "../components/MeaItem";
 
 type Props = NavigationStackProp<RootStackParamList, "MealsOverview">;
 
@@ -21,11 +22,7 @@ const MealsOverViewScreen = ({ route }: Props) => {
   });
 
   const renderMealItem = (item: Meal) => {
-    return (
-      <View>
-        <Text>{item.id}</Text>
-      </View>
-    );
+    return <MealItem title={item.title} imageUrl={item.imageUrl} />;
   };
 
   return (
