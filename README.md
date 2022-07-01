@@ -1,4 +1,4 @@
-# React Native 학습 + 테스트 코드
+# React Native 학습
 
 ## 어떤앱 ?
 
