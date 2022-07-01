@@ -2,20 +2,38 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import Meal from "../models/meal";
 import { MEALS } from "../data/dummy-data";
+import MealDetail from "../components/MealDetail";
 
 const MealDetailScreen = ({ route, navigation }: any) => {
-  const { imageUrl, id } = route.params;
-
-  const selectedMeal = MEALS.find(({ id }) => id === id);
+  const {
+    imageUrl,
+    title,
+    id,
+    duration,
+    complexity,
+    affordability,
+    ingredients,
+    steps,
+  } = route.params;
 
   return (
     <View>
-      <Image source={selectedMeal?.imageUrl} />
-      <Text>텍스트</Text>
-      <View></View>
+      <Image source={imageUrl} />
+      <Text>{title}</Text>
+      <MealDetail
+        duration={duration}
+        complexity={complexity}
+        affordability={affordability}
+      />
       <Text>Ingredients</Text>
+      {ingredients.map((ingredient: any) => (
+        <Text key={ingredient}>{ingredient}</Text>
+      ))}
 
       <Text>Steps</Text>
+      {steps.map((step: any) => (
+        <Text key={step}>{step}</Text>
+      ))}
     </View>
   );
 };
