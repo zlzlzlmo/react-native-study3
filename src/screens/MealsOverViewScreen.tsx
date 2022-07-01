@@ -22,7 +22,15 @@ const MealsOverViewScreen = ({ route }: Props) => {
   });
 
   const renderMealItem = (item: Meal) => {
-    return <MealItem title={item.title} imageUrl={item.imageUrl} />;
+    return (
+      <MealItem
+        title={item.title}
+        imageUrl={item.imageUrl}
+        duration={item.duration}
+        complexity={item.complexity}
+        affordability={item.affordability}
+      />
+    );
   };
 
   return (
